@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Surprise for 2026</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #7b1e3a, #f4a7b9);
+            color: #fff6dc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.35);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #ffd1dc;
+            box-shadow: 0 0 25px rgba(255, 182, 193, 0.35);
+            max-width: 85%;
+            backdrop-filter: blur(6px);
+        }
+
+        h1 { color: #ffd1dc; }
+
+        .loading-bar {
+            width: 100%;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress {
+            width: 0%;
+            height: 10px;
+            background: linear-gradient(to right, #ff6f91, #ffc75f);
+            transition: width 3s ease-in-out;
+        }
+
+        .btn {
+            background: #ffd1dc;
+            color: #4a0f2e;
+            padding: 10px 22px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background: #ffe4ea;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card" id="mainCard">
+        <h1>Happy New Year 2026 🌷</h1>
+        <p>I wanted to send you something special to start the year…</p>
+        <p style="opacity:0.9;">(with a little warmth, flowers & a soft purr 🐈)</p>
+        <button class="btn" onclick="startLoading()">Open My Gift</button>
+    </div>
+
+    <script>
+        function startLoading() {
+            const card = document.getElementById('mainCard');
+            card.innerHTML = `
+                <h1>Preparing your 2026 🌹</h1>
+                <div class="loading-bar">
+                    <div class="progress" id="bar"></div>
+                </div>
+                <p id="statusText">Letting go of old chapters…</p>
+            `;
+            
+            setTimeout(() => {
+                document.getElementById('bar').style.width = '100%';
+            }, 100);
+            
+            setTimeout(() => {
+                card.innerHTML = `
+                    <h1 style="font-size: 48px;">✨ 2026 ✨</h1>
+                    <p style="font-style: italic;">"Some people feel like comfort, just by existing."</p>
+                    <hr style="border: 0.5px solid #ffd1dc; margin:20px 0;">
+                    <p>
+                        <b>For you this year:</b><br>
+                        Soft mornings, blooming tulips 🌷,<br>
+                        roses that linger 🌹,<br>
+                        and moments as calm as a cat finding sunshine 🐈
+                    </p>
+                    <p style="margin-top:20px;">❤️ krishn</p>
+                `;
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
